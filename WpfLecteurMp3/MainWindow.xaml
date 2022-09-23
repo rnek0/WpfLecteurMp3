@@ -1,0 +1,158 @@
+﻿<Window x:Class="WpfLecteurMp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lecteur Mp3" Height="257" Width="638" WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" AllowsTransparency="True" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" Opacity="0.9">
+    <Window.Resources>
+        <DataTemplate x:Key="Chansons">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="{Binding Path=Song}"/>
+            </StackPanel>
+        </DataTemplate>
+        <!--Scroll Bar -->
+        <ControlTemplate x:Key="scroll_background" TargetType="RepeatButton">
+            <Border Background="Transparent"/>
+        </ControlTemplate>
+        
+        <Style x:Key="scroll_thumb_style" TargetType="Thumb">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Rectangle Width="13" Fill="#121212" RadiusX="5" RadiusY="5">
+                            <Rectangle.Effect>
+                                <DropShadowEffect ShadowDepth="0" BlurRadius="10" Color="White" />
+                            </Rectangle.Effect>
+                        </Rectangle>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ScrollBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Grid Width="15">
+                            <Border Width="13" HorizontalAlignment="Center" CornerRadius="5" Background="#33555555">
+                            </Border>
+                            <Track HorizontalAlignment="Center" Name="PART_Track" Width="{TemplateBinding Width}" Maximum="{TemplateBinding Maximum}" Minimum="{TemplateBinding Minimum}"
+                                    Value="{TemplateBinding Value}"  IsDirectionReversed="true">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Template="{StaticResource scroll_background}" Command="ScrollBar.LineUpCommand"  />
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Template="{StaticResource scroll_background}" Command="ScrollBar.LineDownCommand" />
+                                </Track.IncreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource scroll_thumb_style}" >
+                                    </Thumb>
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ListBoxItem -->
+        <Color x:Key="SelectedBackgroundColor">#FF0A9CDF</Color>
+        <Color x:Key="SelectedUnfocusedColor">#FF0A9CDF</Color>
+
+        <Style x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="#121212"/>
+                    <Setter Property="FontWeight" Value="DemiBold"/>
+            </Trigger>
+
+            </Style.Triggers>
+            
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border x:Name="Border" BorderThickness="1" Margin="0,1,0,0" CornerRadius="3" BorderBrush="#c0c0c0" Padding="2" SnapsToDevicePixels="true">
+                            <Border.Background>
+                                <SolidColorBrush Color="Transparent" />
+                            </Border.Background>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected">                                        
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0" Value="{StaticResource SelectedBackgroundColor}" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="SelectedUnfocused">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0" Value="{StaticResource SelectedUnfocusedColor}" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Images/background2.png"/>
+    </Window.Background>
+    
+    <Border BorderBrush="#FF08AAF5" BorderThickness="0">
+        <StackPanel>
+            <Grid Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175*"/>
+                    <ColumnDefinition Width="138*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <!-- LABELS PLAYER -->
+                    <Label x:Name="lblArtist" Grid.Column="0" Content="{Binding Artist}" Style="{StaticResource lblStyle}" Margin="20,32,0,0"/>
+                    <Label x:Name="lblSong" Grid.Column="0" Content="{Binding Song}" Style="{StaticResource lblStyle}" Margin="20,8,0,0"/>
+                    <Label x:Name="lblAlbum" Grid.Column="0" Content="{Binding Album}" Style="{StaticResource lblStyle}" Margin="20,8,0,0"/>
+                    <Label x:Name="lblYear" Grid.Column="0" Content="{Binding Year}" Style="{StaticResource lblStyle}" Margin="20,8,0,0"/>
+                    <Slider x:Name="sliderDuree" Grid.Column="0" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="320" Cursor="Hand" IsManipulationEnabled="True" Foreground="#FF3683CF" Background="#00000000" />
+                    <!-- BOUTONS PLAYER -->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <Button x:Name="btnPlayPrecedent" Content="&lt;&lt;" Margin="20,5,0,0" 
+                                Click="BtnPlayPrecedent_Click" Style="{DynamicResource btnPlayerStyle}"/>
+                        <Button x:Name="btnPlayPause" Content="PLAY" Margin="20,5,0,0" 
+                                Click="Button_Click_2" Style="{DynamicResource btnPlayerStyle}"/>
+                        <Button x:Name="btnStop" Content="STOP" Margin="20,5,0,0" 
+                                Click="Button_Click_1" Style="{DynamicResource btnPlayerStyle}"/>
+                        <Button x:Name="btnPlaySuivant" Content="&gt;&gt;" Margin="20,5,0,0" 
+                                Click="BtnPlaySuivant_Click" Style="{DynamicResource btnPlayerStyle}"/>
+                        <Button x:Name="btnChoixMp3" Content="MP3" Margin="20,5,0,0" 
+                                Click="Button_Click" Style="{DynamicResource btnPlayerStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <!-- MINIMIZE CLOSE WINDOW -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="btnMinimize" Style="{DynamicResource btnWindowStyle}" Grid.Column="1" Width="20" Height="20" HorizontalAlignment="Right" Margin="5" Content="_" Click="BtnMinimize_Click"/>
+                        <Button x:Name="btnFermer" Style="{DynamicResource btnWindowStyle}" Grid.Column="1" Width="20" Height="20" HorizontalAlignment="Right" Margin="5,5,10,5" Content="x" Click="BtnFermer_Click"/>
+                    </StackPanel>
+                    <!-- LISTE CHANSONS -->
+                    <ListBox x:Name="ListeChansons" Grid.Column="0" Margin="0,3,6,7" Height="188" SelectionChanged="ListeChansons_SelectionChanged" Background="#FF3E87D1" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+            <CheckBox x:Name="checkLireEnBoucle" Content="Lire en boucle" Grid.Column="1" HorizontalAlignment="Right" Margin="10,4,23,0" VerticalAlignment="Top" Checked="CheckLireEnBoucle_Checked" FontWeight="Bold" Foreground="#FF3E87D1"/>
+        </StackPanel>
+    </Border>
+</Window>

@@ -1,0 +1,9 @@
+# WpfLecteurMp3
+
+A little spaguetti mp3 reader for April 2017 
+
+!
+
+## Uses [taglib-sharp](https://github.com/mono/taglib-sharp)
+
+

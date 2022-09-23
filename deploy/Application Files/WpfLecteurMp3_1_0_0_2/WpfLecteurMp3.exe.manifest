@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="WpfLecteurMp3.exe" version="1.0.0.2" publicKeyToken="f8623f25b2278d6d" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Lecteur.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="WpfLecteurMp3" version="1.1.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="WpfLecteurMp3.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Options du manifeste de contrôle de compte d'utilisateur
+             Si vous souhaitez modifier le niveau du contrôle de compte d'utilisateur Windows, remplacez le 
+             nœud requestedExecutionLevel par l'une des propositions suivantes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            La spécification de l'élément requestedExecutionLevel désactive la virtualisation de fichiers et du Registre. 
+            Supprimez cet élément si votre application a besoin de la virtualisation pour des
+            raisons de compatibilité descendante.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="policy.2.0.taglib-sharp.dll" size="3072">
+      <assemblyIdentity name="policy.2.0.taglib-sharp" version="0.0.0.0" publicKeyToken="DB62EBA44689B5B0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5NE7a3v2CdQ0sQx6u+RFtq+ua500tujNccDuvhxrr34=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="taglib-sharp.dll" size="443392">
+      <assemblyIdentity name="taglib-sharp" version="2.1.0.0" publicKeyToken="DB62EBA44689B5B0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>iuCVedAthcrHWIW2RUfcEpQOm58u5B0cRh9ZkIRQcYg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WpfLecteurMp3.exe" size="576400">
+      <assemblyIdentity name="WpfLecteurMp3" version="1.1.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>li/mlB60xSd51w7ruJGx3SGgF1e3e6KB88lG9r+paog=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Lecteur.ico" size="16958">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gtbfp3qod6WOhvT5pxAbj/hbQyzR9FK0nm+Rrh6C3aQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="WpfLecteurMp3.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Liste des versions de Windows pour lesquelles cette application a été testée, et sur
+           lesquelles elle doit fonctionner. Supprimez les marques de commentaire des éléments appropriés, et Windows va 
+           automatiquement sélectionner l'environnement le plus compatible. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=Net@pau" issuerKeyHash="380a456da7e2e3eacf4a3cecd09c5be028433f23" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>fRt7Zx4u4S8H0CCyqxDsnpYRyVw=</DigestValue></Reference></SignedInfo><SignatureValue>J6BGfiCdQy00kJOfabdAqrPuk5XEpxvlI9GjkfBZwDBjXW7bGZya7ARIecdY5odFVnW0rrYS6092pp/06QD5U2I148ciwSFYkdHGipsQl9Wcg32jurHUOhCW83Rv+yYnyU3YvmuAKrAg/D6z0RodFF9exfXq51KVSXqCOtIrJIxKJ7bSoo9NJzXzBodPqbEVqxuVuXdnDDNt+b39eCjpSaiY9odDmY4Cg0Ak2POcujCM8vhiEtu0NuDEfRHLHQfNukTMXEf+GeIZ7bYuyBt99J/4qBSOyKNVUzx8JfwNsoR7KSAUHWmUJLUW+PnpZtwv4lyoLGnEQq0LT2zvXch/zw==</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>ykIm+1ZynA3asGisY6kNNLSALCiS/CPDC5NpYdsYCnhutJUtpLXHeMmJVzDI/gJWOUHEZmW+H/H/8UT4dpDNLasAzGBEJzmRp65lRVgchUdMS4G/aHwc4PkGejJw8Bd5RFCk8aDn+wi/7SvSAvMVpGfpVaymxAfy6wurJJCGapEDqJz5FG03vBBC9vMhOOz5V0xgem1j4ycnJB6twq7DOtG2r4sBbxw6IxK51crfsinsLdUXJzlFHvQVfr510jZLLrMCv7tzlDV8dQmcSHdvVZysI29eSbRzi2kfYUopiA9yAdvGyRTtTbfkOXVZjYHfZTGnGzMpSwotfRs0LVO8lQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="5cc911969eec10abb220d0072fe12e1e677b1b7d" Description="" Url=""><as:assemblyIdentity name="WpfLecteurMp3.exe" version="1.0.0.2" publicKeyToken="f8623f25b2278d6d" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Net@pau</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>+y2WRhX2jNeJWj+hQ4uXxHlo540=</DigestValue></Reference></SignedInfo><SignatureValue>D0v7szhHOg97EUXE0E04OeEm79GUarN+52xxgwVVotQzRh8Y+Zr2Bh2VBG/UlsSpp3zuwvuDaMeR8MIuWGGZUp4FOVuWIdSTZuOf69o6gnUckRJetlJMeA4OxNvdeXYTrBheeHwdDr4bSFBdtcZ9YLG9OUbc/CKG3Q6PLQpCND7Oytw3lVUFgvAVH8sjwEoru7BAlsHsLtsQJBvNaGSuNlMfi/vDwPOlmNd2ju9Ht9azNxacWynvKHhRprQI8+m4v2Waw72dWHtX6Ho3s81XunKfFa7X/fHWazkHSlHthovtw5nUO1bwC/b8f17i2vMzoPA40pHEaEt9C2ouDBRpaA==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>ykIm+1ZynA3asGisY6kNNLSALCiS/CPDC5NpYdsYCnhutJUtpLXHeMmJVzDI/gJWOUHEZmW+H/H/8UT4dpDNLasAzGBEJzmRp65lRVgchUdMS4G/aHwc4PkGejJw8Bd5RFCk8aDn+wi/7SvSAvMVpGfpVaymxAfy6wurJJCGapEDqJz5FG03vBBC9vMhOOz5V0xgem1j4ycnJB6twq7DOtG2r4sBbxw6IxK51crfsinsLdUXJzlFHvQVfr510jZLLrMCv7tzlDV8dQmcSHdvVZysI29eSbRzi2kfYUopiA9yAdvGyRTtTbfkOXVZjYHfZTGnGzMpSwotfRs0LVO8lQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIDMzCCAh+gAwIBAgIQKdRoWfgDm7xAbMA0qOZjKzAJBgUrDgMCHQUAMCcxJTAjBgNVBAMTHENlcnRpZmljYXQgUmFjaW5lIFBvd2Vyc2hlbGwwHhcNMTkwOTMwMTQ0NTU2WhcNMzkxMjMxMjM1OTU5WjAZMRcwFQYDVQQDHg4ATgBlAHQAQABwAGEAdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMpCJvtWcpwN2rBorGOpDTS0gCwokvwjwwuTaWHbGAp4brSVLaS1x3jJiVcwyP4CVjlBxGZlvh/x//FE+HaQzS2rAMxgRCc5kaeuZUVYHIVHTEuBv2h8HOD5BnoycPAXeURQpPGg5/sIv+0r0gLzFaRn6VWspsQH8usLqySQhmqRA6ic+RRtN7wQQvbzITjs+VdMYHptY+MnJyQercKuwzrRtq+LAW8cOiMSudXK37Ip7C3VFyc5RR70FX6+ddI2Sy6zAr+7c5Q1fHUJnEh3b1WcrCNvXkm0c4tpH2FKKYgPcgHbxskU7U235Dl1WY2B32UxpxszKUsKLX0bNC1TvJUCAwEAAaNxMG8wEwYDVR0lBAwwCgYIKwYBBQUHAwMwWAYDVR0BBFEwT4AQPGCpxOyCbvcslLvq/PLx/qEpMCcxJTAjBgNVBAMTHENlcnRpZmljYXQgUmFjaW5lIFBvd2Vyc2hlbGyCEMliUEKfA1qmS7TR7W9D1zwwCQYFKw4DAh0FAAOCAQEAFeFvh5981Cy1FwI+jppPbBoNSyw9FOrwEVKqt7O6A3F7+rr7jWrgMH3i0HNTddlDE7r41Ll7LWXUEhKLxndPYjpyzy32NDdDZf4vtmYAgWYChI99XysE1ZMU6z5D9EJ+W8SD6C2VqJj3VuYK5NKb9QoVLMhidsDKSDCFHlBBU0xKaY8KwdL2Q+3qXF/47O3wrKyBlD6C3w8NijHRof3Ke98d4bGxhPhNR0SJpc/rbSNduNzm97aBgNbQz5xmCgBItuPkC6eRuNEUClp0hZWb0hj67oAv0iVit2E3PmGrSWkhZSmTX4QHVTY7OCD6EEqfQYJoCs8yixzL6tzMPRaIHg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
